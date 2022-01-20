@@ -151,9 +151,9 @@ int main(void)
 		goto err;
 	}
 	SHA256(pem_pub_key_buf, pem_pub_key_size, pem_pub_key_sig_buf);
-	if(file_read("pub_digset", pem_pub_key_sig_in_buf) != 32)
+	if(file_read("pub_digest", pem_pub_key_sig_in_buf) != 32)
 	{
-		printf("pub_digset file read failed\n");
+		printf("pub_digest file read failed\n");
 		goto err;
 	}
 	if(memcmp(pem_pub_key_sig_in_buf, pem_pub_key_sig_buf, 32))
